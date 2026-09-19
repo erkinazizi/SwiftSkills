@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0e17;
+    position: relative;
+    color: #fff;
+  }
+  .bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(900px 600px at 82% 18%, rgba(240,81,56,0.22), transparent 60%),
+      radial-gradient(700px 520px at 12% 92%, rgba(88,86,214,0.20), transparent 60%),
+      linear-gradient(140deg, #0b1120 0%, #0a0e17 55%, #10101a 100%);
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 40%, #000 40%, transparent 85%);
+  }
+  .wrap {
+    position: relative; z-index: 2;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    align-items: center;
+    padding: 0 72px;
+    gap: 40px;
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 15px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: #9aa4b8;
+    margin-bottom: 22px;
+  }
+  .eyebrow .dot { width: 9px; height: 9px; border-radius: 50%; background: #f05138; box-shadow: 0 0 14px 2px rgba(240,81,56,0.8); }
+  h1 {
+    font-size: 104px; font-weight: 900; line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+  h1 .swift {
+    background: linear-gradient(92deg, #ff7a45 0%, #f05138 45%, #ff4f8b 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h1 .skills { color: #f4f6fb; }
+  .tag {
+    margin-top: 26px;
+    font-size: 27px; font-weight: 600; color: #c8d0e0; line-height: 1.35;
+    max-width: 660px;
+  }
+  .tag b { color: #fff; font-weight: 800; }
+  .badges { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+  .badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700;
+    padding: 9px 16px; border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #e6ebf5;
+  }
+  .badge span { color: #ff7a45; }
+  .foot {
+    position: absolute; left: 72px; bottom: 40px; z-index: 3;
+    font-size: 17px; color: #6b7488; font-weight: 500;
+  }
+  .foot b { color: #aab3c6; font-weight: 700; }
+  /* Code card */
+  .card {
+    background: linear-gradient(160deg, rgba(23,28,42,0.95), rgba(15,18,28,0.95));
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 18px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+    overflow: hidden;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .card .bar { display: flex; gap: 7px; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .card .bar i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+  .r { background: #ff5f57; } .y { background: #febc2e; } .g { background: #28c840; }
+  .card .fname { margin-left: 10px; font-size: 13px; color: #7f8aa3; align-self: center; }
+  .code { padding: 20px 20px; font-size: 15px; line-height: 1.72; white-space: nowrap; }
+  .code .kw { color: #ff7a8a; } .code .ty { color: #7ee0c6; } .code .at { color: #f0b866; }
+  .code .fn { color: #82aaff; } .code .st { color: #c3e88d; } .code .cm { color: #5a6785; }
+  .code .pl { color: #d6deee; }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="grid"></div>
+  <div class="wrap">
+    <div class="left">
+      <div class="eyebrow"><span class="dot"></span> Skill &amp; Agent for Claude Code</div>
+      <h1><span class="swift">Swift</span><span class="skills">Skills</span></h1>
+      <div class="tag">Principal-level <b>Swift 6.4</b>, <b>SwiftUI</b> &amp; <b>SwiftData</b> expertise — installed straight into Claude&nbsp;Code.</div>
+      <div class="badges">
+        <div class="badge"><span>iOS</span> 27</div>
+        <div class="badge"><span>Xcode</span> 27</div>
+        <div class="badge"><span>Swift</span> 6.4</div>
+        <div class="badge"><span>17</span> references</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i><span class="fname">ContentView.swift</span></div>
+      <div class="code">
+<span class="at">@Observable</span> <span class="kw">final class</span> <span class="ty">Store</span> {<br>
+&nbsp;&nbsp;<span class="kw">var</span> <span class="pl">items:</span> [<span class="ty">Item</span>] = []<br>
+}<br>
+<br>
+<span class="kw">struct</span> <span class="ty">ContentView</span>: <span class="ty">View</span> {<br>
+&nbsp;&nbsp;<span class="at">@State</span> <span class="kw">var</span> <span class="pl">store</span> = <span class="ty">Store</span>()<br>
+&nbsp;&nbsp;<span class="kw">var</span> <span class="pl">body:</span> <span class="kw">some</span> <span class="ty">View</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ty">NavigationStack</span> {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ty">List</span>(<span class="pl">store</span>.<span class="pl">items</span>) { <span class="pl">item</span> <span class="kw">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">ItemRow</span>(<span class="pl">item</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.<span class="fn">task</span> { <span class="kw">await</span> <span class="pl">store</span>.<span class="fn">load</span>() }<br>
+&nbsp;&nbsp;}<br>
+}
+      </div>
+    </div>
+  </div>
+  <div class="foot">Compile-first Swift that holds up in review · <b>ships as a Claude Code skill + subagent</b></div>
+</body>
+</html>
